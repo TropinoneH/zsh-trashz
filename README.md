@@ -1,5 +1,7 @@
 # TrashZ
 
+![image](./img/trash.png)
+
 Have you ever had the experience of using `rm` to directly delete an entire folder, but when you want to restore it, it is completely deleted? You didn't intend to press the Enter key, but accidentally executed the command? Or have you ever thought about deleting the database and running away? `rm -rf /*` was executed successfully?
 
 If you don’t want to be bothered by this miserable experience, this warehouse is your best choice.
