@@ -23,8 +23,17 @@ function trashz() {
         list)
             ls "${@:2}" "$HOME/.trash"
             ;;
+        help)
+            echo "Usage: trashz {clean|restore|rm|list|help} [options]"
+            echo "  clean   - Clean the trash"
+            echo "  restore - Restore a file from the trash"
+            echo "  rm      - Move a file to the trash"
+            echo "  list    - List the contents of the trash"
+            echo "  help    - Display this help message"
+        ;;
         *)
-            echo "Usage: trashz {clean|restore|rm|list} [options]"
+            echo "Usage: trashz {clean|restore|rm|list|help} [options]"
+            echo "use trashz help for more information."
             return 1
             ;;
     esac
