@@ -24,7 +24,7 @@ function rm2trash() {
     for item in "$@"; do
         # Get the absolute path of the file/directory to be deleted
         abs_path=$(realpath "$item")
-
+        
         # Extract the relative path
         rel_path=${abs_path#"$HOME"/}
 
@@ -34,7 +34,7 @@ function rm2trash() {
         # Generate a unique filename for the trash
         timestamp=$(date +%s)
         trash_file="$HOME/.trash/$rel_path_underscore.$timestamp"
-
+        
         # Move the file/directory to ~/.trash
         mv "$abs_path" "$trash_file"
 

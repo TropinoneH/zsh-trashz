@@ -12,7 +12,7 @@ function restore_trash() {
     fi
 
     # 处理恢复所有文件的情况
-    if [ "$1" == "--all" ]; then
+    if [ "$1" = "--all" ]; then
         for trash_file in "$HOME/.trash/"*; do
             restore_file "$trash_file"
         done

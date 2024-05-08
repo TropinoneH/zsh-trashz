@@ -50,6 +50,12 @@ _trashz() {
         rm)
             _files
         ;;
+        list)
+            _arguments -s -C -w \
+                '(-*)-l[long listing format]' \
+                '(-*)-h[show size with unit]' \
+                '(-*)-a[list all]' \
+        ;;
     esac
 }
 

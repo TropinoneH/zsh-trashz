@@ -21,7 +21,7 @@ function trashz() {
             rm2trash "${@:2}"  # Pass remaining arguments
             ;;
         list)
-            ls ~/.trash
+            ls "${@:2}" "$HOME/.trash"
             ;;
         *)
             echo "Usage: trashz {clean|restore|rm|list} [options]"
