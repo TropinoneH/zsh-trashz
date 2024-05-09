@@ -48,7 +48,9 @@ _trashz() {
             fi
         ;;
         rm)
-            _files
+            _arguments -C -w \
+                '-m[slient mode]' \
+                '*:files to move to trash:_rm_complete'
         ;;
         list)
             _arguments -s -C -w \
@@ -59,12 +61,18 @@ _trashz() {
     esac
 }
 
+local function _rm_complete() {
+    if [[ ! $words[CURRENT] = -* ]]; then
+        _complete
+    fi
+}
+
 # Function to complete files from $HOME/.trash
 local function _trash_files() {
     local -a files
     local IFS=$'\n'  # handle spaces in filenames
     # Get all files from $HOME/.trash
-    files=($(ls -A "$HOME/.trash"))
+    files=($(/bin/ls -A "$HOME/.trash" --color=tty))
 
     # Exclude any options that are being completed
     local -a opts
