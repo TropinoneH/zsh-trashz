@@ -26,7 +26,7 @@ function restore_trash() {
 }
 
 function restore_file() {
-    local trash_file="$1"
+    local trash_file="$HOME/.trash/$1"
     local base_name=$(basename "$trash_file")
     
     # 使用正则表达式去除时间戳，假设时间戳是一串数字
@@ -37,7 +37,7 @@ function restore_file() {
     local original_path="$HOME/$rel_path"
     
     # 检查文件是否存在
-    if [ ! -f "$trash_file" ]; then
+    if [ ! -e "$trash_file" ]; then
         echo "File does not exist: $trash_file"
         return 1
     fi
