@@ -18,6 +18,7 @@ _trashz() {
                 'restore:Restore deleted files'
                 'rm:Move file to trash'
                 'list:List files in trash'
+                'help:List all commands'
             )
             _describe 'command' subcmds
             return
